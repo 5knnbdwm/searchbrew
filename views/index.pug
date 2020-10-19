@@ -26,7 +26,8 @@ block content
 
 mixin brew(item)
   .heading
-    h2= item.name
+    - var fullName = item.fullName.join(', ')
+    h2= fullName
     div(class=item.type)
       p= item.type
   .codeblock
