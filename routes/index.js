@@ -31,9 +31,11 @@ router.get('/', async (req, res) => {
 
 router.get('/json', async (req, res) => {
   let values = [];
+  let q = '';
 
   if (req.query.q !== undefined) {
-    values = await db.findData(req.query);
+    q = String(req.query.q);
+    values = await db.findData(q);
   } else {
     values = [];
   }

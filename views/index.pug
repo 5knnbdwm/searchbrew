@@ -16,7 +16,7 @@ block content
       //-   p MacOS Formula
 
   .brew-list
-    //- - var values = [{name: "slackcat", type: "formula", desc:"Command-line utility for posting snippets to Slack", link: "https://github.com/vektorlab/slackcat"}, {name: "slack", type: "cask", desc:"Team communication and collaboration software", link: "https://slack.com"}];
+    //- - var values = [{name: "slackcat", type: "formula", description:"Command-line utility for posting snippets to Slack", link: "https://github.com/vektorlab/slackcat"}, {name: "slack", type: "cask", description:"Team communication and collaboration software", link: "https://slack.com"}];
     each val in values
       .brew-item
         +brew(val)
@@ -33,7 +33,7 @@ mixin brew(item)
     //- - var code = (item.type === "cask") ? (`brew cask install ${item.name}`) : (`brew install ${item.name}`)
     - var cask = (item.type === "cask") ? true : false
     +codeblock(item.name, cask)
-  p= item.desc
+  p= item.description
   a(href=item.link)= item.link
 
 mixin codeblock(name, cask)
