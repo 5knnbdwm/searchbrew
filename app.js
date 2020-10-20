@@ -9,7 +9,6 @@ const indexRouter = require('./routes/index');
 const cronRouter = require('./routes/cron');
 
 const app = express();
-app.listen(8001);
 
 // db setup
 mongoose.connect('mongodb://localhost:27017/searchbrew', {

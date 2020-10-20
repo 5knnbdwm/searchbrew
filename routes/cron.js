@@ -87,9 +87,10 @@ job.start();
 
 /* GET home page. */
 router.get('/', async (req, res) => {
-  const n = await checkAndUpdateBrews();
+  res.send(`The Cron Job has the status: ${job.getStatus()}`);
+  // const n = await checkAndUpdateBrews();
 
-  res.send(`Done with ${n} checks`);
+  // res.send(`Done with ${n} checks`);
 });
 
 // router.get('/start', function(req, res, next) {
